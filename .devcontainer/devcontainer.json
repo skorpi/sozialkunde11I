@@ -1,0 +1,35 @@
+{
+  "name": "lernapps",
+  "image": "ghcr.io/lernapps/devcontainer:latest@sha256:7f3f0a8cff0e8f883fda1c664bf3151e4f12d34feaaf0671dcf43d19ddc93e1c",
+  "postCreateCommand": "if [ -f package-lock.json ]; then npm ci; fi",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code",
+        "openai.chatgpt"
+      ],
+      "settings": {
+        "http.linkProtectionTrustedDomains": [
+          "https://claude.ai",
+          "https://claude.com",
+          "https://platform.claude.com",
+          "https://auth.openai.com",
+          "https://chatgpt.com",
+          "https://github.com"
+        ],
+        "chat.disableAIFeatures": true,
+        "claudeCode.preferredLocation": "sidebar",
+        "workbench.secondarySideBar.defaultVisibility": "visible",
+        "terminal.integrated.hideOnStartup": "always",
+        "extensions.supportUntrustedWorkspaces": {
+          "anthropic.claude-code": {
+            "supported": true
+          },
+          "openai.chatgpt": {
+            "supported": true
+          }
+        }
+      }
+    }
+  }
+}
